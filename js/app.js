@@ -21,10 +21,10 @@ Enemy.prototype.update = function(dt) {
       this.speed = 150 + Math.floor(Math.random() * 222);
     }
     // Handles collision with the Player (you need to implement)
-    if (this.x + 101 > player.x &&
-        this.x < player.x + 101 &&
-        this.y + 83 > player.y &&
-        this.y < player.y + 83) {
+    if (this.x + 75 > player.x &&
+        this.x < player.x + 75 &&
+        this.y + 50 > player.y &&
+        this.y < player.y + 50) {
             player.x = 203;
             player.y = 403;
     }
