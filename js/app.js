@@ -21,6 +21,13 @@ Enemy.prototype.update = function(dt) {
       this.speed = 150 + Math.floor(Math.random() * 222);
     }
     // Handles collision with the Player (you need to implement)
+    if (this.x + 101 > player.x &&
+        this.x < player.x + 101 &&
+        this.y + 83 > player.y &&
+        this.y < player.y + 83) {
+            player.x = 203;
+            player.y = 403;
+    }
 };
 
 // Draw the enemy on the screen, required method for game
@@ -39,10 +46,6 @@ var Player = function(x, y) {
 
 // This class requires an update(), render() and a handleInput() method.
 Player.prototype.update = function(dt) {
-    // Can be similiar to the one for the Enemy:
-    //      You should multiply any movement by the dt parameter which will ensure the game runs at the same speed for all computers.
-    //      Updates the Enemy location (you need to implement)
-    //      Handles collision with the Player (you need to implement)
 };
 
 Player.prototype.render = function() {
@@ -74,18 +77,12 @@ Player.prototype.handleInput = function(key) {
     }
 }
 
-
 // Now instantiate your objects.
-// Once you have completed implementing the Player and Enemy, you should instantiate them by:
-//     Creating a new Player object
-//     Creating several new Enemies objects and placing them in an array called allEnemies
-
 // Place all enemy objects in an array called allEnemies
 var allEnemies = [new Enemy(0, 63, 100), new Enemy(0, 147, 150), new Enemy(0, 230, 200)];
 
 // Place the player object in a variable called player
 var player = new Player(203, 403);
-
 
 // This listens for key presses and sends the keys to your Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
