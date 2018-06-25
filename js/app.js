@@ -25,14 +25,40 @@ Enemy.prototype.render = function() {
 
 // Now write your own player class
 var Player = function(x, y) {
+  // Setting the Player initial location
   this.x = x;
   this.y = y;
+  // Loading the image by setting this.sprite to the appropriate image in the image folder
   this.sprite = 'images/char-pink-girl.png';
 };
+
 // This class requires an update(), render() and a handleInput() method.
+Player.prototype.update = function(dt) {
+    // Can be similiar to the one for the Enemy:
+    //      You should multiply any movement by the dt parameter which will ensure the game runs at the same speed for all computers.
+    //      Updates the Enemy location (you need to implement)
+    //      Handles collision with the Player (you need to implement)
+};
+
+Player.prototype.render = function() {
+    // Use the code from the render method for the Enemy
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
+Player.prototype.handleInput = function() {
+  // Should receive user input, allowedKeys (the key which was pressed), and move the player according to that input. In particular:
+  //      Left key should move the player to the left, right key to the right, up should move the player up and down should move the player down
+  //      Recall that the player cannot move off screen (so you will need to check for that and handle appropriately)
+  //      If the player reaches the water the game should be reset by moving the player back to the initial location:
+  //           You can write a separate reset Player method to handle that
+}
 
 
 // Now instantiate your objects.
+// Once you have completed implementing the Player and Enemy, you should instantiate them by:
+//     Creating a new Player object
+//     Creating several new Enemies objects and placing them in an array called allEnemies
+
 // Place all enemy objects in an array called allEnemies
 var allEnemies = [];
 // Place the player object in a variable called player
