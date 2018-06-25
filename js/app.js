@@ -24,6 +24,11 @@ Enemy.prototype.render = function() {
 };
 
 // Now write your own player class
+var Player = function(x, y) {
+  this.x = x;
+  this.y = y;
+  this.sprite = 'images/char-pink-girl.png';
+};
 // This class requires an update(), render() and a handleInput() method.
 
 
