@@ -59,18 +59,19 @@ Player.prototype.handleInput = function(key) {
     if (key == 'right' && this.x < 405) {
       this.x += 101;
     }
-    //Up arrow should move the player up
-    if (key == 'up' && this.y > 83) {
+    // Up arrow should move the player up
+    if (key == 'up' && this.y > 0) {
       this.y -= 83;
     }
-    //Down arrow should move the player down
+    // Down arrow should move the player down, but not off screen
     if (key == 'down' && this.y < 400) {
       this.y += 83;
     }
-  //      Left key should move the player to the left, right key to the right, up should move the player up and down should move the player down
-  //      Recall that the player cannot move off screen (so you will need to check for that and handle appropriately)
-  //      If the player reaches the water the game should be reset by moving the player back to the initial location:
-  //           You can write a separate reset Player method to handle that
+    // If the player reaches the water, the game should be reset by moving the player back to the initial location
+    if (this.y < 0) {
+      player.x = 203;
+      player.y = 403;
+    }
 }
 
 
