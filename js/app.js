@@ -50,10 +50,14 @@ Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-Player.prototype.handleInput = function() {
-  // Should receive user input, allowedKeys (the key which was pressed), and move the player according to that input. In particular:
-    if (allowedKeys = 'left' && this.x > 10) {
+Player.prototype.handleInput = function(key) {
+    // Left key should move the player to the left, but not off screen
+    if (key == 'left' && this.x > 10) {
       this.x -= 101;
+    }
+    // Right key should move the player to the right, but not off screen
+    if (key == 'right' && this.x < 405) {
+      this.x += 101;
     }
   //      Left key should move the player to the left, right key to the right, up should move the player up and down should move the player down
   //      Recall that the player cannot move off screen (so you will need to check for that and handle appropriately)
