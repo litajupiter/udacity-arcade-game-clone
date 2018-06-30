@@ -27,6 +27,7 @@ Enemy.prototype.update = function(dt) {
         this.x < player.x + 75 &&
         this.y + 50 > player.y &&
         this.y < player.y + 50) {
+            numLives -= 1;
             player.x = 203;
             player.y = 403;
     }
@@ -123,4 +124,9 @@ window.onclick = function(event) {
 function winGame() {
   modal.classList.toggle("visible");
   document.querySelector(".modal-text").innerHTML = `Congratulations, you won! With ${numLives} out of 3 lives remaining!`;
+}
+
+function loseGame() {
+  modal.classList.toggle("visible");
+  document.querySelector(".modal-text").innerHTML = `Game over, man!`;
 }
