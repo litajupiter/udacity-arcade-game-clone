@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    font-family: 'Orbitron', sans-serif;
 }
 
 /* The Modal (background) */
@@ -18,11 +19,14 @@ body {
 
 /* Modal Content/Box */
 .modal-content {
+    font-size: 1.25em;
+    letter-spacing: 2px;
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 700px;
+    max-width: 100%;
 }
 
 /* The Close Button */
@@ -38,6 +42,19 @@ body {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.button {
+  font-family: inherit;
+  font-size: 16px;
+  letter-spacing: 1px;
+  border-radius: 12px;
+}
+
+.button:hover {
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 10px green;
 }
 
 .visible {
