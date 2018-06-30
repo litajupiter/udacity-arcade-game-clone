@@ -123,10 +123,5 @@ window.onclick = function(event) {
 
 function winGame() {
   modal.classList.toggle("visible");
-  document.querySelector(".modal-text").innerHTML = `Congratulations, you won! With ${numLives} out of 3 lives remaining!`;
-}
-
-function loseGame() {
-  modal.classList.toggle("visible");
-  document.querySelector(".modal-text").innerHTML = `Game over, man!`;
+  document.querySelector(".modal-text").innerHTML = `<img src="${player.sprite}"><p style="color: green;">Congratulations, you won! With ${numLives} out of 3 lives remaining!</p>`;
 }
