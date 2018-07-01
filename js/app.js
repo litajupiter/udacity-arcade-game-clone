@@ -22,15 +22,21 @@ Enemy.prototype.update = function(dt) {
       this.x = -25;
       this.speed = 150 + Math.floor(Math.random() * 222);
     }
+    if (numLives === 0) {
+      loseGame();
+    }
     // Handles collision with the Player (you need to implement)
     if (this.x + 75 > player.x &&
         this.x < player.x + 75 &&
         this.y + 50 > player.y &&
-        this.y < player.y + 50) {
+        this.y < player.y + 50 &&
+        numLives > 0) {
             numLives -= 1;
             console.log(numLives);
-            player.x = 203;
-            player.y = 403;
+            resetGame();
+    }
+    if (numLives === 0) {
+      loseGame();
     }
 };
 
@@ -76,15 +82,12 @@ Player.prototype.handleInput = function(key) {
     }
     // If the player reaches the water, the game should be reset by moving the player back to the initial location
     if (this.y < 0) {
-      player.x = 203;
-      player.y = 403;
+      resetGame();
       winGame();
     }
-    if (numLives === 0) {
-      player.x = 203;
-      player.y = 403;
-      loseGame();
-    }
+    // if (numLives === 0) {
+    //   loseGame();
+    // }
 }
 
 // Now instantiate your objects.
