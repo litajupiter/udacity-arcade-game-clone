@@ -28,6 +28,7 @@ Enemy.prototype.update = function(dt) {
         this.y + 50 > player.y &&
         this.y < player.y + 50) {
             resetGame();
+            loseLife();
     }
 };
 
@@ -121,6 +122,15 @@ window.onclick = function(event) {
 function resetGame() {
     player.x = 203;
     player.y = 403;
+}
+
+function loseLife() {
+  if (numLives > 1) {
+    numLives -=1;
+    console.log(numLives);
+  } else if (numLives === 1) {
+    loseGame();
+  }
 }
 
 function winGame() {
