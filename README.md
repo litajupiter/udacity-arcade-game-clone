@@ -8,7 +8,7 @@ For detailed instructions on how to get started, check out this [guide](https://
 Functionality
 =============
 
-This version of the Udacity Classic Arcade Game Clone of Frogger is by Brianne Williams (née Hennel). Reference sources include: W3Schools, YouTube (Ben Cunningham, Udacity), and the Udacity Front-End Web Developer Nanodegree Support Facebook Group.
+This version of the Udacity Classic Arcade Game Clone of Frogger is by Brianne Williams (née Hennel). Reference sources include: Mozilla Developer Network (MDN), W3Schools, YouTube (Ben Cunningham, Udacity), and the Udacity Front-End Web Developer Nanodegree Support Facebook Group.
 
 To run the game, open index.html in your web browser.
 
