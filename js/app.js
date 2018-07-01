@@ -29,7 +29,8 @@ Enemy.prototype.update = function(dt) {
         this.y < player.y + 50) {
             numLives -= 1;
             console.log(numLives);
-            resetGame();
+            player.x = 203;
+            player.y = 403;
     }
 };
 
@@ -75,12 +76,14 @@ Player.prototype.handleInput = function(key) {
     }
     // If the player reaches the water, the game should be reset by moving the player back to the initial location
     if (this.y < 0) {
+      player.x = 203;
+      player.y = 403;
       winGame();
-      resetGame();
     }
     if (numLives === 0) {
+      player.x = 203;
+      player.y = 403;
       loseGame();
-      resetGame();
     }
 }
 
