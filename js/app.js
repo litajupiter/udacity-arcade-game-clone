@@ -85,9 +85,6 @@ Player.prototype.handleInput = function(key) {
       resetGame();
       winGame();
     }
-    // if (numLives === 0) {
-    //   loseGame();
-    // }
 }
 
 // Now instantiate your objects.
@@ -120,29 +117,27 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-    // modal.style.display = "none";
     modal.classList.toggle("visible");
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
-        // modal.style.display = "none";
         modal.classList.toggle("visible");
     }
 }
 
 function resetGame() {
-  player.x = 203;
-  player.y = 403;
+    player.x = 203;
+    player.y = 403;
 }
 
 function winGame() {
-  modal.classList.toggle("visible");
-  document.querySelector(".modal-text").innerHTML = `<img src="${player.sprite}"><p style="color: green;">Congratulations, you won! With ${numLives} out of 3 lives remaining!</p>`;
+    modal.classList.toggle("visible");
+    document.querySelector(".modal-text").innerHTML = `<img src="${player.sprite}"><p style="color: green;">Congratulations, you won! With ${numLives} out of 3 lives remaining!</p>`;
 }
 
 function loseGame() {
-  modal.classList.toggle("visible");
-  document.querySelector(".modal-text").innerHTML = `<img src="images/enemy-bug.png"><p style="color: red;">Game over, man! Better luck next time!</p>`;
+    modal.classList.toggle("visible");
+    document.querySelector(".modal-text").innerHTML = `<img src="images/enemy-bug.png"><p style="color: red;">Game over, man! Better luck next time!</p>`;
 }
