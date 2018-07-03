@@ -99,10 +99,7 @@ document.addEventListener('keyup', function(e) {
 });
 
 // Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+var modal = document.getElementById('finalModal');
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -127,7 +124,6 @@ function resetGame() {
 function loseLife() {
   if (numLives > 1) {
     numLives -=1;
-    console.log(numLives);
   } else if (numLives === 1) {
     loseGame();
   }
